@@ -9,10 +9,11 @@ function App() {
 
   const [nameflag, setNameflag] = useState([])
   const [placename, setPlaceName] = useState('Given Name')
+  const [ef, setEf] = useState('1')
   let flag, comp
 
   useEffect(() => {
-    console.log('beep boop')
+    console.log('skipidi booop baa skipidi baaaeee')
     let nameflagInit = []
     axios.get('https://ctfreg.herokuapp.com/enterflag').then(res => {
       res.data.forEach(item => {
@@ -21,9 +22,20 @@ function App() {
           flag: item.flagcount
         })
       })
+      for (let a = 0; a < nameflagInit.length; a++){
+        for (let b = 0; b < nameflagInit.length; b++){
+          if (nameflagInit[a].flag < nameflagInit[b].flag) {
+            let temp = nameflagInit[a]
+            nameflagInit[a] = nameflagInit[b]
+            nameflagInit[b] = temp
+          }
+        }
+      }
+      console.log('d')
       setNameflag(nameflagInit)
+      setEf('0')
     })
-  }, [])
+  }, [ef])
   
   function Cards() {
     return (
@@ -76,10 +88,13 @@ function App() {
                   }).then(res2 => {
                     if (res2.status !== 200) console.log(res2.data.message)
                     else {
-                      if (res.data.message === 'wrong flag!!') alert(res.data.message)
-                      if (res.data.message) console.log(res.data.message.message)
-                      else if (res.status === 200) console.log('Flag uploaded! Move on.')
+                      if (res.data.message === 'wrong flag!!') alert(res.data.message + " :warning")
+                      if (res.data.message) alert(res.data.message.message + " :warning")
+                      else if (res.status === 200) {
+                        alert('Move on, Flag Uploaded!')
+                      }
                     }
+                    setEf('1')
                   })
                 })
               }} className='putin'>Enter the Flag</button></div>
@@ -91,7 +106,7 @@ function App() {
         <div className='leaderright'>
           <div className='tab'>
             <div className='iconrel'>
-              <IconButton style={{float: 'left', color:'#f19232'}}>
+              <IconButton onClick={()=>setEf('1')} style={{float: 'left', color:'#f19232'}}>
                 <Replay />
               </IconButton>
               <div className='tabhead'>Leaderboard</div>
