@@ -1,38 +1,192 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Brawler&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Brawler', serif; */
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #F2F6FE;
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./DOT.png');
+}
+
+.title{
+  text-align: center;
+  padding: 2%;
+  font-size: 25pt;
+  text-transform: uppercase;
+  color: #f19232;
+  font-family: 'Assistant', sans-serif;
+  font-weight: 400;
+  background-color: white;
+  box-shadow: 1px 7px 5px 0px rgba(227,227,227,0.75);
+  z-index: 9999999999;
+}
+
+.appmain{
+  width: 100vw;
+  height: 80vh;
+  margin-top: 20px;
+}
+
+.inputleft{
+  float: left;
+  width: 65%;
+  height: 100%;
+}
+
+.inputdata{
+  height: 70%;
+  width: 100%;
+}
+
+.inputcenter{
+  width: 300px;
+  height: fit-content;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+input{
+  width: 300px;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px #fad2aab2;
+  margin-top: 50px;
+  text-align: center;
+  background-color: unset;
+  font-family: 'Brawler';
+  font-size: 15pt;
+  transition: ease-in-out 0.4s;
+}
+
+input:hover{
+  box-shadow: 0 5px 10px #775b5bb2;
+}
+
+
+.putin{
+  margin-top: 30px;
+  padding: 10px;
+  font-family: 'Poppins';
+  background-color: unset;
+  background-color: #f19232;
+  border: none;
+  margin-left: 20px;
+  font-size: 13pt;
+  border-radius: 5px;
+}
+
+.putin:hover{
+  border: solid;
+  border-radius: 5px;
+  border-width: 0.4px;
+}
+
+.encrypmsg{
+  height: 30%;
+  width: 100%;
+  font-family: 'Poppins';
+  font-size: 12pt;
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.leaderright{
+  float: left;
+  width: 35%;
+  height: 100%;
+}
+
+.tab{
+  width: 90%;
+  height: fit-content;
+  margin-left: 5%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ac87ca;
+}
+
+.tabhead{
+  font-family: 'Poppins';
+  font-size: 15pt;
+  padding: 2% 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cardcol{
+  width: 100%;
+  height: 90%;
+  overflow: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.containercard{
+  width: 78%;
+  float: right;
+  position: relative;
+  margin-right: 5%;
+  border-radius: 5px;
+  padding: 3%;
+  margin-top: 25px;
+  box-shadow: 0 0 10px rgba(227,227,227,0.75);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.containercard:hover{
+  box-shadow: 0 0 10px rgba(129, 104, 104, 0.75);
+}
+
+.name{
+  width: 100%;
+  margin-left: 20px;
+  font-family: 'Poppins';
+  font-size: 15pt;
+  color: gray;
+}
+
+.flagcount{
+  padding: 1%;
+  margin-left: 13px;
+}
+
+.count{
+  position:absolute;
+  left: -10px;
+  top: 38%;
+  z-index: 99;
+  padding: 10px;
   color: white;
+  border-radius: 50%;
+  width: fit-content;
+  height: fit-content;
+  background-color: #f19232;
 }
 
-.App-link {
-  color: #61dafb;
+.hovercount{
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 600px){
+  .inputleft{
+    float: unset;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .leaderright{
+    float: unset;
+    width: 100%;
   }
 }
