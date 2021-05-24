@@ -95,7 +95,8 @@ input:hover{
 
 .encrypmsg{
   height: 30%;
-  width: 100%;
+  width: 90%;
+  margin-left: 8%;
   font-family: 'Poppins';
   font-size: 12pt;
   color: grey;
@@ -103,6 +104,8 @@ input:hover{
   justify-content: center;
   align-items: center;
   overflow: auto;
+  word-break: break-all;
+  scrollbar-color: black;
 }
 
 .leaderright{

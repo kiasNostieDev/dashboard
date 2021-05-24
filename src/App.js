@@ -24,14 +24,13 @@ function App() {
       })
       for (let a = 0; a < nameflagInit.length; a++){
         for (let b = 0; b < nameflagInit.length; b++){
-          if (nameflagInit[a].flag < nameflagInit[b].flag) {
+          if (nameflagInit[a].flag > nameflagInit[b].flag) {
             let temp = nameflagInit[a]
             nameflagInit[a] = nameflagInit[b]
             nameflagInit[b] = temp
           }
         }
       }
-      console.log('d')
       setNameflag(nameflagInit)
       setEf('0')
     })
@@ -89,10 +88,8 @@ function App() {
                     if (res2.status !== 200) console.log(res2.data.message)
                     else {
                       if (res.data.message === 'wrong flag!!') alert(res.data.message + " :warning")
-                      if (res.data.message) alert(res.data.message.message + " :warning")
-                      else if (res.status === 200) {
-                        alert('Move on, Flag Uploaded!')
-                      }
+                      else if (res.data.message) alert(res.data.message + " :warning")
+                      else alert('Move on, Flag Uploaded!')
                     }
                     setEf('1')
                   })
@@ -100,7 +97,7 @@ function App() {
               }} className='putin'>Enter the Flag</button></div>
             </div>
           </div>
-          <div className='encrypmsg'>WW91ciBCYWQsIGJpdGNoClJpYXMgR3JlbW9yeSBEaWVzIQ==</div>
+          <div className='encrypmsg'>CgoiY29uZ3JhdHVsYXRpb25zIG9uIHlhciBmaXJzIHN0ZXAgdG93YXJkcyB0aGUgY29tcGVpdGlvbiIKCnNvIGkgaG9wZSB5b3UgZGVjcnlwdGVkIHRoZSBoYXNoIGFsZ29yaXRoLi4uLgoKYW5kIG5vdyB5b3UgYXJlIHNlZWluZyB0aGUgd29ybGRzIHdvcnN0IGFuZCB1Z2xpZXN0IGRvY2N1bWVudGF0aW9uIGJ1dCBoYW5nIG9uIHlvdSBuZWVkIHRvIGZpbmQgdGhlIHdheSBvdXQgaGVyZSByaWdodD8/CgpzbyBvbmNlIGRlIGNyeXB0ZWQgeW91IHdpbGwgaGF2ZSBhbiBhcGkgbGluayB3YWl0aW5nIGZvciB5YS4uLi4KCgpva2F5IHRoaXMgZmlsZSBmb3IgaGVscGluIHlvdSBhcm91bmQgdGhlIGFwaQoKCnNvIHRoZSBmaXJzdCBzdGVwIGZvciB5b3UgaXMgdG8gYWNjZXNzIHRoZSBhcGkgYW5kIGdldCB5b3VyIGZpcnN0IGZsYWcuLi4KCnNvIHRoZSBzaW1wbGUgYW5kIGJhc2ljIHN0ZXAgeW91IGFyZSBnb2luZyB0byBkbyBpcyAKCnNlbmQgYW4gcG9zdCByZXF1ZXN0IHRvIHRoZSBmb2xsb3dpbmcgbGluawoKImh0dHBzOi8vY3RmcmVnLmhlcm9rdWFwcC5jb20vY3RmIgoKeW91IHdpbGwgaGF2ZSBubyBhY2Nlc3MgY2F1c2UgeW91IGhhdmVudCBwcm92aWRlZCB1cyB3aXRoIGFueSBkZXRhaWxzCnBpdHR5IG9mIG1lIGhhdmVudCB0b2xkIHRoYXQgYmVmb3JlISEhIQoKc28geW91IHdhbnQgdG8gaW5jbHVkZSB5b3VyIGVtYWlsIGFuZCBwYXNzd29yZCB0aGF0IHlvdSB1c2VkIGluIHJlZ2lzdHJhdGlvbi4uCmJ1dCB0aGUgZm9ybWF0IGdvZXMgaW4gYSBqc29uIGZvcm1hdCB3aXRoICJlbWFpbCIgYW5kIHRoZSB2YWx1ZSBpcyB5b3VyIGVtYWlsIGFkZHJlc3MuIAphbmQgInBhc3N3b3JkIiBrZXkgd2l0aCB2YWx1ZSB5b3VyIHBhc3N3b3JkIHVzZWQgaW4gcmVnaXN0cmF0aW9uLgoKYWRkIHRoaXMgaW4geW91ciBib2R5IGFuZCBzZW5kIGEgcG9zdCByZXF1ZXN0IHRvIHRoZSBzYW1lIGFjY291bnQKCgppZiB5b3UgZm9yZ290IHlvdXIgcGFzc3dvcmQuLi4gb29vcHMgc29ycnkgd2UgZG9udCBoZWxwIHlvdSBhcm91bmYgdGhhdCB3YXkuLi4KdGhpcyBpcyBjeWJlcnNlY3VyaXR5IGNvbXAgc28gLi4gaWYgeW91IG5lZWQgeW91IGNhbiBoYWNrIG91ciBkYiBhbmQgZ2V0IHlvdSBwYXNzd29yZCBhbmQgcHJvY2VlZCBsb2w6PgoKc28gZW5kIG9mIGZpbGUgZ28gb24uLi4uLi4=</div>
         </div>
         
         <div className='leaderright'>
