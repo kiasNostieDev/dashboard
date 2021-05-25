@@ -96,16 +96,23 @@ input:hover{
 .encrypmsg{
   height: 30%;
   width: 90%;
-  margin-left: 8%;
+  margin-left: 5%;
   font-family: 'Poppins';
   font-size: 12pt;
   color: grey;
+  overflow: auto;
+  word-wrap: break-word;
+}
+
+.cpybtn{
+  border: none;
+  padding: 6px;
+  font-family: 'Poppins';
+  width: fit-content;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
-  word-break: break-all;
-  scrollbar-color: black;
 }
 
 .leaderright{
@@ -189,6 +196,7 @@ input:hover{
   }
 
   .leaderright{
+    margin-top: 50px;
     float: unset;
     width: 100%;
   }
